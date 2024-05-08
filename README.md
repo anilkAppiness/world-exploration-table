@@ -11,7 +11,7 @@
 <!-- Technology Stack
 Frontend: React.js, Shadcn/ui, 
 CSS framework: Tailwind
-API: APIs-guru/graphql-apis
+API: https://countries.trevorblades.com/
 Testing: Cypress.io -->
 
 
