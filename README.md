@@ -1,4 +1,4 @@
-<!-- I completed this project by following a systematic approach to meet the specified requirements: -->
+<!-- I completed this project by following a systematic approach to meet the specified requirements: .-->
 
 <!-- 1.Understanding Requirements: I carefully analyzed the problem statement provided and outlined the necessary features and functionalities required for the project. -->
 
