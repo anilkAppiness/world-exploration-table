@@ -238,24 +238,7 @@ const [rowSelection, setRowSelection] = useState({})
     { label: 'Oceania', value: 'Oceania' },
     { label: 'Antarctica', value: 'Antarctica' },
   ];
-  // const options12 = [
-  //   { label: 'All Languages', value: '' },
-  //   { label: 'English', value: 'English' },
-  //   { label: 'Hindi', value: 'Hindi' },
-  //   { label: 'French', value: 'French' },
-  //   { label: 'Russian', value: 'Russian' },
-  //   { label: 'Spanish', value: 'Spanish' },
-  //   { label: 'German', value: 'German' },
-  //   { label: 'Peul', value: 'Peul' },
-  //   { label: 'Arabic', value: 'Arabic' },
-  //   { label: 'Italian', value: 'Italian' },
-  //   { label: 'Chinese', value: 'Chinese' },
-  //   { label: 'Greek', value: 'Greek' },
-  //   { label: 'Turkish', value: 'Turkish' },
-  //   { label: 'Korean', value: 'Korean' },
-
-  // ]
-
+ 
 const uniqueLanguages = new Set();
 
 dataLang?.countries?.forEach(country => {
@@ -322,18 +305,14 @@ console.log(options12);
 
   return (
     <>
-    {/* <div className='w-full h-20 bg-red-100'>
-      <img  className="w-full h-20" src="/mapbanner.jpeg" alt="map banner" />
-      </div>  */}
 <div className='flex flex-col justify-center items-center my-10 px-5 lg:px-5 md:px-10'>
-
 <div class="relative flex flex-col md:flex-row w-full">
  <div class="w-full md:w-2/3 pr-0 md:pr-2 mb-5 md:mb-0">
   <h6 className='pb-5 font-semibold text-lg'>World Exploration</h6>
   <div className="w-full">
       <div className="flex justify-between items-center gap-4 py-4">
         <Input
-          placeholder="Search by country code..."
+          placeholder="Search by Country Code"
           value={table.getColumn("code")?.getFilterValue() ?? ""}
           onChange={(event) =>
             table.getColumn("code")?.setFilterValue(event.target.value)
@@ -341,8 +320,8 @@ console.log(options12);
           className="max-w-sm"
         />
         <div className="hidden md:flex flex-row gap-2">
-            <CustomSelect placeholder="Select a Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
-            <CustomSelect placeholder="Select a Languages" value={selectedLag} options={options12} onChange={handleLanguageChange} />
+            <CustomSelect placeholder="Filter by Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
+            <CustomSelect placeholder="Filter by Language" value={selectedLag} options={options12} onChange={handleLanguageChange} />
           </div>
           <div className="block md:hidden lg:hidden">
           <DropdownMenu >
@@ -354,8 +333,8 @@ console.log(options12);
   <div className="lg:hidden"> 
     <DropdownMenuContent ref={menuRef} isOpen={isOpen} className="py-2 px-2 flex flex-col gap-1" align="end">
       <div className="flex flex-row gap-2">
-        <CustomSelect placeholder="Select a Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
-        <CustomSelect placeholder="Select a Languages" value={selectedLag} options={options12} onChange={handleLanguageChange} />
+        <CustomSelect placeholder="Filter by Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
+        <CustomSelect placeholder="Filter by Language" value={selectedLag} options={options12} onChange={handleLanguageChange} />
       </div>
     </DropdownMenuContent>
   </div>
