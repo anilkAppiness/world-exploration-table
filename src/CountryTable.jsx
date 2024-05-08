@@ -340,23 +340,29 @@ console.log(options12);
           }
           className="max-w-sm"
         />
-        <div className="flex flex-row gap-2">
+        <div className="hidden md:flex flex-row gap-2">
             <CustomSelect placeholder="Select a Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
             <CustomSelect placeholder="Select a Languages" value={selectedLag} options={options12} onChange={handleLanguageChange} />
           </div>
-        {/* <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Filter by<Settings2 className="ml-2 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <div >
-          <DropdownMenuContent  ref={menuRef} isOpen={isOpen} className="py-2 px-2 flex flex-col gap-1" align="end">
-          
-          
-          </DropdownMenuContent>
+          <div className="block md:hidden lg:hidden">
+          <DropdownMenu >
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline" className="ml-auto">
+      Filter by<Settings2 className="ml-2 h-4 w-4" />
+    </Button>
+  </DropdownMenuTrigger>
+  <div className="lg:hidden"> 
+    <DropdownMenuContent ref={menuRef} isOpen={isOpen} className="py-2 px-2 flex flex-col gap-1" align="end">
+      <div className="flex flex-row gap-2">
+        <CustomSelect placeholder="Select a Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
+        <CustomSelect placeholder="Select a Languages" value={selectedLag} options={options12} onChange={handleLanguageChange} />
+      </div>
+    </DropdownMenuContent>
+  </div>
+</DropdownMenu>
           </div>
-        </DropdownMenu> */}
+
+
    
       </div>
       <div className="rounded-md border">

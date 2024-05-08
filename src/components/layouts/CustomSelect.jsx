@@ -62,7 +62,7 @@ const CustomSelect = ({ placeholder, value, options, onChange }) => {
         </svg>
       </button>
       {isOpen && (
-        <div className="absolute w-full max-h-40 overflow-y-auto z-50 mt-1 bg-white border border-gray-300 rounded-md shadow-lg" style={{ maxHeight }}>
+        <div className="relative lg:absolute md:absolute w-full max-h-40 overflow-y-auto z-50 mt-1 bg-white border border-gray-300 rounded-md shadow-lg" style={{ maxHeight }}>
           {options.map((option) => (
             <button
               key={option.value}
