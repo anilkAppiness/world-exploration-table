@@ -1,20 +1,43 @@
-<!-- I completed this project by following a systematic approach to meet the specified requirements: .-->
+# World Exploration Table
 
-<!-- 1.Understanding Requirements: I carefully analyzed the problem statement provided and outlined the necessary features and functionalities required for the project. -->
-
-<!-- 2. Technology Selection: Based on the requirements, I chose React.js as the frontend framework due to its flexibility and component-based architecture.shadcn/ui was selected for its modern and responsive design components. For data retrieval, I utilized the GraphQL countries endpoint API provided. -->
-
-<!-- 3. Development Process: I followed an iterative development process, starting with setting up the project environment. then implemented each feature incrementally, ensuring functionality and responsiveness across different devices. -->
-
-<!-- 4. Testing: I conducted end-to-end testing using Cypress.io to ensure the correctness and reliability of the application's functionality. One of the test cases I wrote focuses on verifying that country details are retrieved correctly from the -->
-
-<!-- Technology Stack
-Frontend: React.js, Shadcn/ui, 
-CSS framework: Tailwind
-API: https://countries.trevorblades.com/
-Testing: Cypress.io -->
+This project is a React.js web application that consumes a GraphQL endpoint to display country data and provides interactive features like sorting, filtering, and data visualization.
 
 
+## Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project demonstrates the consumption of a GraphQL endpoint from [APIs-guru/graphql-apis](https://countries.trevorblades.com/). It utilizes React.js for the frontend, Shadcn/ui for the user interface components, and Tailwind CSS for styling. 
+
+The application provides a table view with sorting, filtering, and basic interactions. When a filter selection is made, the data is reflected in both the Nivo pie chart and the table. The chart displays country names organized according to continent and language.
+
+Additionally, it includes a summary display upon selection of a row and basic data visualization based on the GraphQL endpoint used.
+
+## Table of Contents
+
+- [How to Install and Run the Project](#how-to-install-and-run-the-project)
+- [How to Use the Project](#how-to-use-the-project)
+- [Credits](#credits)
+- [License](#license)
+
+## How to Install and Run the Project
+
+1. Clone this repository. (https://github.com/anilkAppiness/world-exploration-table.git)
+2. Install dependencies using `npm install`.
+3. Run the development server using `npm run dev`.
+
+## How to Use the Project
+
+1. Access the application via the provided local server address.
+2. Interact with the UI to seach a country code in the search bar.
+3. Explore the table view with sorting, filtering, and basic interactions.
+4. Select a row to view a summary of the selected country's details.
+5. Experience the responsive UI for both browser and handheld devices.
+
+## Credits
+
+- Project by [Anil Kumawat]
+
+- Data provided by [APIs-guru/graphql-apis](https://countries.trevorblades.com/)
+
+## License
+
+This project is licensed under the [GPL License](https://choosealicense.com/licenses/gpl-3.0/).
