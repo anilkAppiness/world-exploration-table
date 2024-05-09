@@ -13,10 +13,6 @@ const CountryDataPieChart = () => {
     // window.location.reload();
   }, [localStorage.getItem('countriesData')]);
 
-
-  
-  console.log("inside pie chart data are", countriesData);
-
   const transformData = (data) => {
     const countryCount = {};
     data.forEach(country => {

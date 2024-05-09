@@ -26,6 +26,9 @@ export const GET_COUNTRIES = gql`
 export const GET_ALL_LAN = gql`
 query GetAlllanguages{
   countries {
+    continent {
+      name
+    }
     languages {
       name
     }

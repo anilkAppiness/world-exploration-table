@@ -1,26 +1,26 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
 
-const CustomSelect = ({ placeholder, value, options, onChange }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const LanguageCustomSelect = ({ placeholder, value, options, onChange }) => {
+  const [isOpenLang, setIsOpenLang] = useState(false);
   const buttonRef = useRef(null);
   const menuRef = useRef(null);
 
   const handleOptionClick = (option) => {
-    setIsOpen(false);
+    setIsOpenLang(false);
     onChange(option);
     buttonRef.current.focus();
   };
 
   const handleKeyDown = (event) => {
     if (event.key === 'Escape') {
-      setIsOpen(false);
+      setIsOpenLang(false);
       buttonRef.current.focus();
     }
   };
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsOpen(false);
+      setIsOpenLang(false);
     }
   };
 
@@ -44,10 +44,10 @@ const CustomSelect = ({ placeholder, value, options, onChange }) => {
     <div className="relative" ref={menuRef}>
       <button
         ref={buttonRef}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpenLang(!isOpenLang)}
         onKeyDown={handleKeyDown}
         aria-haspopup="listbox"
-        aria-expanded={isOpen}
+        aria-expanded={isOpenLang}
         className={`text-gray-500 bg-gray-0 border border-gray-200 rounded-md px-4 py-2.5 text-sm flex items-center justify-between w-${buttonWidth} focus:outline-none focus:border-gray-500`}
         style={{ width: buttonWidth }}
       >
@@ -64,7 +64,7 @@ const CustomSelect = ({ placeholder, value, options, onChange }) => {
           <path d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      {isOpen && (
+      {isOpenLang && (
         <div className="relative lg:absolute md:absolute w-full max-h-40 overflow-y-auto overflow-x-hidden z-50 mt-1 bg-white border border-gray-300 rounded-md shadow-lg" style={{ maxHeight }}>
           {options.map((option) => (
             <button
@@ -87,4 +87,4 @@ const CustomSelect = ({ placeholder, value, options, onChange }) => {
   );
 };
 
-export default CustomSelect;
+export default LanguageCustomSelect;
