@@ -55,7 +55,7 @@ select {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #333;
   appearance: none; /* Hide the default arrow */
 }
 
@@ -71,15 +71,4 @@ select::-ms-expand {
   right: 10px;
   transform: translateY(-50%);
   pointer-events: none; /* Avoid click event on the arrow */
-}
-
-/* Example CSS */
-/* Apply white background to even rows */
-tr:nth-child(even) {
-  background-color: #ffffff; /* Adjust color as needed */
-}
-
-/* Apply light gray background to odd rows */
-tr:nth-child(odd) {
-  background-color:red !important; /* Adjust color as needed */
 }

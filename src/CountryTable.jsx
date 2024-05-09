@@ -29,6 +29,8 @@ import { GET_ALL_LAN, GET_COUNTRIES } from "./components/gqlOperation/queries";
 import CustomSelect from "./components/layouts/CustomSelect";
 import LanguageCustomSelect from "./components/layouts/LanguageCustomSelect";
 import CountryDataPieChart from "./components/layouts/CountryDataPieChart";
+import Loader from "./components/loader/Loader";
+import CustomDropdownMenu from "./components/layouts/CustomDropdownMenu";
 export function CountryTableContent({dataLang, data }) {
   const [sorting, setSorting] = useState([]);
   const [columnFilters, setColumnFilters] = useState([])
@@ -250,21 +252,30 @@ console.log(options12);
             <LanguageCustomSelect placeholder="Filter by Language" value={selectedLag} options={options12} onChange={handleLanguageChange} />
           </div>
           <div className="block md:hidden lg:hidden">
-          <DropdownMenu >
+          <CustomDropdownMenu>
+          <div className="py-2 px-2 flex flex-col gap-1" align="end">
+            <div className="flex flex-col lg:flex-row md:flex-row gap-2">
+              <CustomSelect placeholder="Filter by Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
+              <LanguageCustomSelect placeholder="Filter by Language" value={selectedLag} options={options12} onChange={handleLanguageChange} />
+            </div>
+          </div>
+        </CustomDropdownMenu>
+
+          {/* <DropdownMenu >
   <DropdownMenuTrigger asChild>
     <Button variant="outline" className="ml-auto px-4">
       Filter by<Settings2 className="ml-2 h-4 w-4" />
     </Button>
   </DropdownMenuTrigger>
   <div className="lg:hidden"> 
-    <DropdownMenuContent ref={menuRef} isOpen={isOpen} className="py-2 px-2 flex flex-col gap-1" align="end">
+    <DropdownMenuContent ref={menuRef} isOpen={isOpen} onClose={() => setIsOpen(false)} className="py-2 px-2 flex flex-col gap-1" align="end">
       <div className="flex flex-col lg:flex-row md:flex-row gap-2">
         <CustomSelect placeholder="Filter by Continent" value={selectedContinent} options={options} onChange={handleContinentChange} />
         <LanguageCustomSelect placeholder="Filter by Language" value={selectedLag} options={options12} onChange={handleLanguageChange} />
       </div>
     </DropdownMenuContent>
   </div>
-</DropdownMenu>
+</DropdownMenu> */}
           </div>
       </div>
       <div className="rounded-md border">
@@ -344,7 +355,7 @@ export function CountryTable() {
   const { loading, error, data } = useQuery(GET_COUNTRIES);
   const {data:dataLang} = useQuery(GET_ALL_LAN);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>Error: {error.message}</p>;
 
   return <CountryTableContent dataLang ={dataLang} data={data} />;
