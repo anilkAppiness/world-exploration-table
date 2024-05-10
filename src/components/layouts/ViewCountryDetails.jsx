@@ -31,7 +31,7 @@ console.log("country details are", countryDetails)
     <Sheet onOpenChange={onOpenChange} {...props}>
       <SheetContent className="flex flex-col gap-6 sm:max-w-md">
         <SheetHeader className="text-left">
-          <SheetTitle className="flex flex-row justify-start items-center gap-2"> <h1 className="text-3xl">{countryDetails?.name}</h1><h1 className="text-5xl">{countryDetails?.emoji}</h1></SheetTitle>
+          <SheetTitle className="flex flex-row justify-start items-center gap-2"> <h1 className="text-2xl lg:text-3xl">{countryDetails?.name}</h1><h1 className="text-5xl">{countryDetails?.emoji}</h1></SheetTitle>
         </SheetHeader>
         <div className=" py-2 rounded-md">
           <ul className="flex flex-col gap-5">

@@ -332,9 +332,9 @@ console.log(options12);
   </div>
   <div class="w-full relative md:relative lg:fixed lg:top-10 lg:right-0 lg:w-1/3 sm:w-full md:w-full"> 
     <div class="h-full" ref={worldChartRef}>
-    <h6 className='pb-10 font-semibold text-lg md:text-2xl lg:text-2xl text-center'>World Chart</h6>
+    <h6 className='pb-1 lg:pb-10 font-semibold text-lg md:text-2xl lg:text-2xl text-center'>World Chart</h6>
     <div className='mt-5'>
-     <h5 className="text-center text-semibold text-lg pb-5"> {selectedContinent ? `${selectedContinent} (${dataRows?.length} Countries)`: `${dataRows?.length} Countries` }</h5> 
+     <h5 className="text-center text-semibold text-lg pb-2 lg:pb-5"> {selectedContinent ? `${selectedContinent} (${dataRows?.length} Countries)`: `${dataRows?.length} Countries` }</h5> 
     <CountryDataPieChart />
     </div>
     </div> 

@@ -37,7 +37,7 @@ const CustomDropdownMenu = ({ children }) => {
   return (
     <div className="relative">
       <div onClick={handleToggleMenu}>
-        <Button variant="outline" className="ml-auto px-4">
+        <Button variant="outline" className="ml-auto px-4 text-gray-500">
           Filter by<Settings2 className="ml-2 h-4 w-4" />
         </Button>
       </div>
@@ -45,7 +45,7 @@ const CustomDropdownMenu = ({ children }) => {
         <div
           ref={menuRef}
           onMouseLeave={handleMouseLeave}
-          className="absolute top-8 right-0 mt-2 w-48 bg-white rounded-md shadow z-10"
+          className="absolute top-8 right-0 mt-2 w-48 bg-white  rounded-md shadow z-10"
           style={{ minWidth: '10rem' }}
         >
           {React.Children.map(children, (child) => {
