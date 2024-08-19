@@ -1,4 +1,4 @@
-(function() {
+    (function() {
   // 1. Create a container for the chatbot
   var chatbotContainer = document.createElement('div');
   chatbotContainer.id = 'my-chatbot-container';
@@ -14,22 +14,18 @@
   
   document.body.appendChild(chatbotContainer);
 
-  // 2. Load the chatbot UI (assuming it's a React app or similar)
-  var script = document.createElement('script');
-  script.src = 'https://world-exploration-table.vercel.app/'; // Replace with your chatbot UI URL
-  script.onload = function() {
-    // Assuming your chatbot initializes automatically or call an init function here
-  };
-  document.body.appendChild(script);
+  // 2. Load the chatbot UI into an iframe
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://world-exploration-table.vercel.app/'; // Replace with your chatbot UI URL
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.border = 'none';
+  chatbotContainer.appendChild(iframe);
 
-  // 3. Optionally, add some CSS
+  // 3. Optionally, add additional CSS for the container or iframe
   var style = document.createElement('style');
   style.innerHTML = `
-    #my-chatbot-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    /* You can add more custom styles here */
   `;
   document.head.appendChild(style);
 })();
