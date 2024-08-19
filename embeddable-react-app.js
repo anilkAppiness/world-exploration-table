@@ -1,35 +1,42 @@
 (function() {
-  // 1. Create a container for the chatbot
-  var chatbotContainer = document.createElement('div');
-  chatbotContainer.id = 'my-chatbot-container';
-  chatbotContainer.style.position = 'fixed';
-  chatbotContainer.style.bottom = '20px';
-  chatbotContainer.style.right = '20px';
-  chatbotContainer.style.width = '300px';
-  chatbotContainer.style.height = '400px';
-  chatbotContainer.style.backgroundColor = '#fff';
-  chatbotContainer.style.border = '1px solid #ccc';
-  chatbotContainer.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.1)';
-  chatbotContainer.style.zIndex = '10000';
-  
-  document.body.appendChild(chatbotContainer);
+  // Ensure React and ReactDOM are loaded
+  function loadScript(src, callback) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
 
-  // 2. Load the chatbot UI (assuming it's a React app or similar)
-  var script = document.createElement('script');
-  script.src = 'https://world-table-appiness.vercel.app/embeddable-react-app.js'; // Replace with your chatbot UI URL
-  script.onload = function() {
-    // Assuming your chatbot initializes automatically or call an init function here
-  };
-  document.body.appendChild(script);
-
-  // 3. Optionally, add some CSS
-  var style = document.createElement('style');
-  style.innerHTML = `
-    #my-chatbot-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+  // Load React and ReactDOM
+  function loadReact(callback) {
+    if (!window.React || !window.ReactDOM) {
+      loadScript('https://unpkg.com/react@17/umd/react.production.min.js', function() {
+        loadScript('https://unpkg.com/react-dom@17/umd/react-dom.production.min.js', callback);
+      });
+    } else {
+      callback();
     }
-  `;
-  document.head.appendChild(style);
+  }
+
+  // Load and render the React app
+  function loadReactApp() {
+    loadScript('https://world-table-appiness.vercel.app/static/js/main.js', function() {
+      if (typeof window.App !== 'undefined') {
+        var container = document.getElementById('react-app-root');
+        if (!container) {
+          container = document.createElement('div');
+          container.id = 'react-app-root';
+          document.body.appendChild(container);
+        }
+        ReactDOM.render(React.createElement(App), container);
+      } else {
+        console.error('App component is not defined');
+      }
+    });
+  }
+
+  // Start loading process
+  loadReact(loadReactApp);
 })();
+
