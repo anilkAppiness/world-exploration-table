@@ -40,7 +40,7 @@ The project includes end-to-end testing using Cypress to ensure the correctness 
 
 ## Vercel Deployment Link
 
-The project is deployed on Vercel. You can access it [https://world-table-appiness.vercel.app/](#vercel-deployment-link).
+The project is deployed on Vercel. You can access it [https://world-exploration-table.vercel.app/](#vercel-deployment-link).
 
 ## Tech Stack
 
