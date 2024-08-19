@@ -16,7 +16,7 @@
 
   // 2. Load the chatbot UI (assuming it's a React app or similar)
   var script = document.createElement('script');
-  script.src = 'https://yourdomain.com/path/to/chatbot.js'; // Replace with your chatbot UI URL
+  script.src = 'https://world-table-appiness.vercel.app/embeddable-react-app.js'; // Replace with your chatbot UI URL
   script.onload = function() {
     // Assuming your chatbot initializes automatically or call an init function here
   };
