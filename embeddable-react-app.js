@@ -21,7 +21,7 @@
 
   // Load and render the React app
   function loadReactApp() {
-    loadScript('https://world-table-appiness.vercel.app/static/js/main.js', function() {
+    loadScript('https://world-exploration-table.vercel.app/static/js/main.js', function() {
       if (typeof window.App !== 'undefined') {
         var container = document.getElementById('react-app-root');
         if (!container) {
